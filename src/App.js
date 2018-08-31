@@ -1,8 +1,22 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import Form from './components/Form'
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      name: 'blabla'
+    }
+  }
+
+  onChangeName = (newName) => { 
+    this.setState(
+      { name: newName }
+    );
+  }
+
   render() {
     return (
       <div className="App">
@@ -11,8 +25,11 @@ class App extends Component {
           <h1 className="App-title">Welcome to React</h1>
         </header>
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
+          HERE: {this.state.name}
         </p>
+        <Form 
+          changeName = {this.onChangeName}
+        />
       </div>
     );
   }

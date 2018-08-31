@@ -1,0 +1,14 @@
+{
+    "extends": "standard",
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "semi": 0,
+        "space-before-function-paren":0,
+        "no-unused-vars":0
+    }
+}
