@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import TextField from '@material-ui/core/TextField';
-// import Checkbox from '@material-ui/core/Checkbox';
-// import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 class Form extends Component {
   constructor(props) {
@@ -40,16 +38,6 @@ class Form extends Component {
             type="number"
           />
         </div>
-        {/* <div>
-          <FormControlLabel
-            control={
-              <Checkbox
-                onChange={this.props.handleCheckboxChange('doTakeOutCapital')}
-              />
-            }
-            label="Take out initial investment"
-          />
-        </div> */}
       </div>
     )
   }

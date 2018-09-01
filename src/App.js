@@ -12,7 +12,6 @@ class App extends Component {
     this.state = {
       interestRatePerDay: 1.4,
       investmentLength: 99,
-      // doTakeOutCapital: false,
       initialCapital: 1000,
       investedCapital: [],
       gains_fullReinvest: [],
@@ -70,12 +69,6 @@ class App extends Component {
     });
   };
 
-  // handleCheckboxChange = (fieldName) => event => {
-  //   this.setState({
-  //     [fieldName]: event.target.checked,
-  //   });
-  // };
-
   componentDidMount() {
     this.calculate_fullReinvest();
     this.calculate_takeOutCapital();
@@ -89,25 +82,10 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        {/* <p className="App-intro">
-          FromChild: {this.state.name}
-        </p>
-        <p className="App-intro">
-          Checkbox: {this.state.doTakeOutCapital.toString()}
-        </p> */}
-        <p className="App-intro">
-          {/* Gain: {this.state.gains.toString()} */}
-        </p>
-        <p className="App-intro">
-          Capital: {this.state.investedCapital.toString()}
-        </p>
-        <Paper elevation={1}>
-          <Form
-            handleChange={this.handleChange}
-            handleCheckboxChange={this.handleCheckboxChange}
-          />
-        
-
+        <Form
+          handleChange={this.handleChange}
+          handleCheckboxChange={this.handleCheckboxChange}
+        />
         <Button
           variant="contained"
           color="secondary"
@@ -115,8 +93,6 @@ class App extends Component {
         >
           calculate
         </Button>
-        </Paper>
-
         <Graph
           gainsFullReinvest={this.state.gains_fullReinvest}
           gainsTakeOutCapital={this.state.gains_takeOutCapital}
