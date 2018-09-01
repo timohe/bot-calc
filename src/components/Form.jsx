@@ -5,35 +5,20 @@ class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'Cat in the Hat',
-      age: '',
-      multiline: 'Controlled',
-      currency: 'EUR'
+      name: 'initial'
     };
   }
 
-  // eslint-disable-next-line
-  handleNameChange = (event) => { // eslint-disable-line
-    this.setState(
-      { name: event.target.value }
-    );
-    this.props.changeName(event.target.value)
-  }
-  /*eslint-enable */
   render() {
     return (
       <div>
-        <p>
-          Hererererere:
-        </p>
         <TextField
           id="name"
           label="Name"
-          value={this.state.name}
-          onChange={this.handleNameChange}
+          placeholder="Timo"
+          onChange={this.props.handleChange('name')}
           margin="normal"
         />
-        {this.state.name}
       </div>
     )
   }
