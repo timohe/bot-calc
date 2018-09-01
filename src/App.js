@@ -8,8 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: 'blabla',
-      interestRatePerDay: 1.00,
+      interestRatePerDay: 1.4,
       investmentLength: 99,
       doTakeOutCapital: false,
       initialCapital: 1000,
@@ -19,21 +18,19 @@ class App extends Component {
   }
 
   calculate = () => {
-    var gain;
-    var gainArray = [];
-    var capitalArray = [];
+    // console.log("*******"+this.state.interestRatePerDay+" "+this.state.investmentLength+" "+this.state.doTakeOutCapital+" "+this.state.initialCapital)
+    var gain = 0;
     var currentlyInvested = this.state.initialCapital;
+    var gainArray = [0];
+    var capitalArray = [];
 
     for (var periods = 1; periods <= 6; periods++) {
-      console.log(currentlyInvested);
-      capitalArray.push(currentlyInvested)
-      for (var day = 0; day <= this.state.investmentLength; day++) {
+      capitalArray.push(Math.round(currentlyInvested))
+      for (var day = 0; day < this.state.investmentLength; day++) {
         currentlyInvested += currentlyInvested * (this.state.interestRatePerDay / 100);
         gain += currentlyInvested * (this.state.interestRatePerDay / 100);
       }
-      // console.log(gain);
-      
-      gainArray.push(gain);
+      gainArray.push(Math.round(gain));
       //after the x days are gone, you got your capital back in rates so this is now included in the gains
       currentlyInvested = gain;
       if (this.state.doTakeOutCapital) {
@@ -85,12 +82,12 @@ class App extends Component {
           handleCheckboxChange={this.handleCheckboxChange}
 
         />
-        <Button 
-          variant="contained" 
-          color="secondary" 
+        <Button
+          variant="contained"
+          color="secondary"
           onClick={() => this.calculate(this.state.interestRatePerDay, this.state.investmentLength, this.state.doTakeOutCapital, this.state.initialCapital)}
-          >
-          Secondary
+        >
+          calculate
         </Button>
       </div>
 
