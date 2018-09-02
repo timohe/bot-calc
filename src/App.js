@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import Form from './components/Form'
 import Graph from './components/Graph'
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import './App.css';
+import Helmet from 'react-helmet';
 
 class App extends Component {
   constructor() {
@@ -56,6 +56,7 @@ class App extends Component {
       currentlyInvested = gain;
       //take out initial capital
       currentlyInvested -= capitalArray[capitalArray.length - 1];
+      gain += capitalArray[capitalArray.length - 1];
     }
     this.setState({
       gains_takeOutCapital: gainArray,
@@ -78,21 +79,26 @@ class App extends Component {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
+        <Helmet bodyAttributes={{ style: 'background-color : #F5F5F5' }} />
+
+        <h1>Crypto Bot Calculator</h1>
+        <h2>Even though the gains might seem huge, those crypto bots are all based on 
+          Ponzi schemes, which means they will explode sooner or later, which makes this a high-risk investment.
+        </h2>
+
         <Form
           handleChange={this.handleChange}
           handleCheckboxChange={this.handleCheckboxChange}
         />
-        <Button
-          variant="contained"
-          color="secondary"
-          onClick={() => { this.calculate_fullReinvest(); this.calculate_takeOutCapital(); }}
-        >
-          calculate
+        <div className="ButtonSpaced">
+          <Button
+            variant="contained"
+            color="secondary"
+            onClick={() => { this.calculate_fullReinvest(); this.calculate_takeOutCapital(); }}
+          >
+            calculate
         </Button>
+        </div>
         <Graph
           gainsFullReinvest={this.state.gains_fullReinvest}
           gainsTakeOutCapital={this.state.gains_takeOutCapital}
