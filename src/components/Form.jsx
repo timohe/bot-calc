@@ -15,7 +15,7 @@ class Form extends Component {
           <TextField
             label="Daily interest"
             placeholder="1.5"
-            onChange={this.props.handleChange('name')}
+            onChange={this.props.handleChange('interestRatePerDay')}
             margin="normal"
             type="number"
           />

@@ -65,7 +65,7 @@ class App extends Component {
   // https://stackoverflow.com/questions/32782922/what-do-multiple-arrow-functions-mean-in-javascript
   handleChange = (fieldName) => event => {
     this.setState({
-      [fieldName]: event.target.value,
+      [fieldName]: Number(event.target.value),
     });
   };
 
@@ -97,9 +97,7 @@ class App extends Component {
           gainsFullReinvest={this.state.gains_fullReinvest}
           gainsTakeOutCapital={this.state.gains_takeOutCapital}
         />
-
       </div>
-
     );
   }
 }
