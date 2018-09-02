@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Form from './components/Form'
 import Graph from './components/Graph'
 import Button from '@material-ui/core/Button';
-import Paper from '@material-ui/core/Paper';
 import './App.css';
 import Helmet from 'react-helmet';
 
@@ -82,27 +81,40 @@ class App extends Component {
         <Helmet bodyAttributes={{ style: 'background-color : #F5F5F5' }} />
 
         <h1>Crypto Bot Calculator</h1>
-        <h2>Even though the gains might seem huge, those crypto bots are all based on 
-          Ponzi schemes, which means they will explode sooner or later, which makes this a high-risk investment.
-        </h2>
+        <p>Even though gains might seem huge, those crypto bots are all based on <a href="https://en.wikipedia.org/wiki/Ponzi_scheme">Ponzi schemes</a>,
+          <br />This means they will go down sooner or later, which makes this a high-risk investment.
+        </p>
 
+        <h2>Examples</h2>
+        <p><a href="http://t.me/therecycle_bot?start=550959464">RecycleBot:</a> Interest: 2.8%, Duration 60 Days</p>
+        <p><a href="https://t.me/iCenter_ETH_Bot?start=86vo4g86124">iCenter:</a> Interest: 1.4%, Duration 99 Days</p>
         <Form
           handleChange={this.handleChange}
           handleCheckboxChange={this.handleCheckboxChange}
         />
-        <div className="ButtonSpaced">
+        <div className="CalcButton">
           <Button
             variant="contained"
             color="secondary"
             onClick={() => { this.calculate_fullReinvest(); this.calculate_takeOutCapital(); }}
           >
             calculate
-        </Button>
+          </Button>
         </div>
+
         <Graph
           gainsFullReinvest={this.state.gains_fullReinvest}
           gainsTakeOutCapital={this.state.gains_takeOutCapital}
         />
+        <p>Notes on Calculation: 
+        <br />All the bots I have seen work the same: 
+        You will get a daily interest which you can reinvest.
+        The initial investment will be included in this daily interest.
+        This means if a bot has 1.5% for 100 days, you will get back 1% from your capital (=100%) each day plus 0.5% interest. 
+        You will not get your capital back after the whole duration.
+        <br />This calculater includes compound interest and assumes a reinvestment once a day.
+        The "take out capital"-line means after each period you take out the money you invested at the start of this period.
+        </p>
       </div>
     );
   }

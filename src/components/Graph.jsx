@@ -21,19 +21,19 @@ class Graph extends Component {
               marker: { color: 'blue' },
               name: '100% Reinvest'
             }
-            // { type: 'bar', x: [1, 2, 3], y: [2, 5, 3] }
           ]}
           layout={{
-            width: 700,
-            height: 500,
             title: 'Linear Scale',
             xaxis: {
               range: [0, 6]
             },
             yaxis: {
-            }
+            },
+            autosize: true
           }}
+          useResizeHandler= { true }
           config={{ 'displayModeBar': false }}
+          className = {'plot'}
         />
         <Plot
           data={[
@@ -51,20 +51,20 @@ class Graph extends Component {
               marker: { color: 'blue' },
               name: '100% Reinvest'
             }
-            // { type: 'bar', x: [1, 2, 3], y: [2, 5, 3] }
           ]}
           layout={{
-            width: 700,
-            height: 500,
             title: 'Log scale',
             xaxis: {
               range: [0, 6]
             },
             yaxis: {
               type: 'log'
-            }
+            },
+            autosize: true
           }}
           config={{ 'displayModeBar': false }}
+          useResizeHandler= { true }
+          className = {'plot'}
         />
       </div>
     );
