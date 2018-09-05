@@ -7,4 +7,4 @@ npm run deploy
 Only dependencies are react, material ui, plotly and for deployment gh-pages
 
 
-[Tutorial for gh pages: ](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#github-pages)
+Tutorial for gh pages [here](https://github.com/facebook/create-react-app/blob/master/packages/react-scripts/template/README.md#github-pages)
