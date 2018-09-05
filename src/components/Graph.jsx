@@ -25,6 +25,7 @@ class Graph extends Component {
           layout={{
             title: 'Linear Scale',
             xaxis: {
+              title: 'x*duration',
               range: [0, 6]
             },
             yaxis: {
@@ -55,6 +56,7 @@ class Graph extends Component {
           layout={{
             title: 'Log scale',
             xaxis: {
+              title: 'x*duration',
               range: [0, 6]
             },
             yaxis: {

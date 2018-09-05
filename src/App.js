@@ -81,9 +81,7 @@ class App extends Component {
         <Helmet bodyAttributes={{ style: 'background-color : #F5F5F5' }} />
 
         <h1>Crypto Bot Calculator</h1>
-        <p>Even though gains might seem huge, those crypto bots are all based on <a href="https://en.wikipedia.org/wiki/Ponzi_scheme">Ponzi schemes</a>,
-          <br />This means they will go down sooner or later, which makes this a high-risk investment.
-        </p>
+        <p>Warning: Even though gains might seem huge, this is a high risk investment.</p>
 
         <h2>Examples</h2>
         <p><a href="http://t.me/therecycle_bot?start=550959464">RecycleBot:</a> Interest: 2.8%, Duration 60 Days</p>
@@ -114,6 +112,7 @@ class App extends Component {
         You will not get your capital back after the whole duration.
         <br />This calculater includes compound interest and assumes a reinvestment once a day.
         The "take out capital"-line means after each period you take out the money you invested at the start of this period.
+        Most of the bots are <a href="https://en.wikipedia.org/wiki/Ponzi_scheme">Ponzi schemes</a> so be careful.
         </p>
       </div>
     );
