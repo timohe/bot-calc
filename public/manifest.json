@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Crypto Bot Calc",
+  "name": "Interest Calculator for Crypto Bots",
   "icons": [
     {
       "src": "favicon.ico",
